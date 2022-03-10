@@ -1,0 +1,21 @@
+<-- app/home/hme.page.html
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Meu Projeto
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  Pagina Home do projeto
+  <p>
+    Esse é um parágrafo usando uma tag HTML.
+  </p>
+  <ion-footer>
+    <ion-toolbar color="secondary">
+      <ion-title>Rodapé</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
