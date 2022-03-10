@@ -14,9 +14,10 @@
   <p>
     Esse é um parágrafo usando uma tag HTML.
   </p>
-  <ion-footer>
-    <ion-toolbar  color="tertiary"  >
-     <ion-title>Rodapé</ion-title>
-    </ion-toolbar>
-   </ion-footer>
 </ion-content>
+
+ <ion-footer>
+  <ion-toolbar  color="tertiary"  >
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
