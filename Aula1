@@ -1,10 +1,11 @@
 <-- app/home/hme.page.html
 
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Meu Projeto
-    </ion-title>
+<ion-header translucent="true">
+  <ion-toolbar  color="secondary"  >
+    <ion-buttons  collapse="true" slot="end">
+      <ion-button>Sair</ion-button>
+    </ion-buttons>
+    <ion-title>Teste de abertura</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,8 +15,8 @@
     Esse é um parágrafo usando uma tag HTML.
   </p>
   <ion-footer>
-    <ion-toolbar color="secondary">
-      <ion-title>Rodapé</ion-title>
+    <ion-toolbar  color="tertiary"  >
+     <ion-title>Rodapé</ion-title>
     </ion-toolbar>
-  </ion-footer>
+   </ion-footer>
 </ion-content>
