@@ -1,0 +1,63 @@
+<ion-header translucent="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons  collapse="true" slot="end">
+      <ion-button>Sair</ion-button>
+    </ion-buttons>
+    <ion-title>Teste de abertura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <!-- Default -->
+  <ion-button>Default</ion-button>
+
+  <!-- Anchor -->
+  <ion-button href="#">Anchor</ion-button>
+  <br/>
+  <!-- Colors -->
+  <ion-button color="primary">Primary</ion-button>
+  <ion-button color="secondary">Secondary</ion-button>
+  <ion-button color="tertiary">Tertiary</ion-button>
+  <ion-button color="success">Success</ion-button>
+  <ion-button color="warning">Warning</ion-button>
+  <ion-button color="danger">Danger</ion-button>
+  <ion-button color="light">Light</ion-button>
+  <ion-button color="medium">Medium</ion-button>
+  <ion-button color="dark">Dark</ion-button>
+  <br/>
+
+    <!-- Expand -->
+    <ion-button expand="full">Full Button</ion-button>
+    <ion-button color="success" expand="block">Block Button</ion-button>
+    <br/>
+    <!-- Round -->
+    <ion-button shape="round">Round Button</ion-button>
+
+
+    <!-- Icons -->
+    <ion-button>
+      <ion-icon slot="start" name="star"></ion-icon>
+      Left Icon
+    </ion-button>
+
+    <ion-button>
+      Right Icon
+      <ion-icon  color="dark" slot="end" name="star"></ion-icon>
+    </ion-button>
+
+    <ion-button>
+      <ion-icon slot="icon-only" name="star"></ion-icon>
+    </ion-button>
+
+    <!-- Sizes -->
+    <ion-button  size="large">Large</ion-button>
+    <ion-button>Default</ion-button>
+    <ion-button  size="small">Small</ion-button>
+
+</ion-content>
+
+   <ion-footer>
+    <ion-toolbar color="tertiary">
+      <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer>
