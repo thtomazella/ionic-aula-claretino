@@ -1,28 +1,88 @@
 <--! home.page.html-->
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header translucent="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons  collapse="true" slot="end">
+      <ion-button>Sair</ion-button>
+    </ion-buttons>
+    <ion-title>Teste de abertura</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding>
 
-  <div id="container">
-    <p> {{ text }}</p>
-    <ion-button (click)="onChangeText()">Fechar</ion-button>
+  Página Home do projeto.
+  <p>
+  Esse é um parágrafo usando uma tag HTML.
+  </p>
 
-    <p> {{ text2 }}</p>
-    <ion-button (click)="onChangeText2()">Outro</ion-button>
+  <ion-button color="primary" expand="full" (click)="mostrarComponente()">Mostrar a folha de ação</ion-button>
 
-    <ion-textarea>teste</ion-textarea>
-
-
-  </div>
 </ion-content>
+
+   <ion-footer>
+    <ion-toolbar color="tertiary">
+      <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+  
+  
+<--! home.page.ts -->
+import { Component, OnInit } from '@angular/core';
+import { ActionSheetController } from '@ionic/angular';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+export class HomePage {
+
+constructor(public actionSheetController: ActionSheetController) {}
+
+  async mostrarComponente() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Albums',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        id: 'delete-button',
+        data: {
+          type: 'delete'
+        },
+        handler: () => {
+          console.log('Delete clicked');
+        }
+      }, {
+        text: 'Share',
+        icon: 'share',
+        data: 10,
+        handler: () => {
+          console.log('Share clicked');
+        }
+      }, {
+        text: 'Play (open modal)',
+        icon: 'caret-forward-circle',
+        data: 'Data value',
+        handler: () => {
+          console.log('Play clicked');
+        }
+      }, {
+        text: 'Favorite',
+        icon: 'heart',
+        handler: () => {
+          console.log('Favorite clicked');
+        }
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
+}
