@@ -6,3 +6,5 @@
 -- entrar na pasta do projeto
 - [ ] ionic serve
 -- vai abrir a pagina
+
+-[ ] consultas  https://ionicframework.com/docs/api/title
