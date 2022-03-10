@@ -7,4 +7,4 @@
 - [ ] ionic serve
 -- vai abrir a pagina
 
--[ ] consultas  https://ionicframework.com/docs/api/title
+- [ ] consultas  https://ionicframework.com/docs/api/title
