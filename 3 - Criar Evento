@@ -1,0 +1,28 @@
+<--! home.page.html-->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <p> {{ text }}</p>
+    <ion-button (click)="onChangeText()">Fechar</ion-button>
+
+    <p> {{ text2 }}</p>
+    <ion-button (click)="onChangeText2()">Outro</ion-button>
+
+    <ion-textarea>teste</ion-textarea>
+
+
+  </div>
+</ion-content>
