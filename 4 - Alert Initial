@@ -1,0 +1,48 @@
+<!-- home.page.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <ion-button expand="block" (click)="showAlert()" >Show alerts</ion-button>
+  </div>
+</ion-content>
+
+
+<!-- home.page.ts -->
+import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { Alert } from 'selenium-webdriver';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+export class HomePage {
+
+  constructor(
+    // BUSCANDO O PACOTE DO IONIC
+    private alertCtrl: AlertController
+  ) {}
+
+  async showAlert(){
+    //CHAMANDO O ALERTCONTROLER
+    //PASSAR ALGUMAS PROPRIEDADES
+    const myAlert = await this.alertCtrl.create({
+      header: 'HEADER',
+      subHeader: 'SUB HEADER',
+      message: 'MESSAGE',
+
+      buttons: ['OK','CANCELAR']
+    });
+    myAlert.present();
+  }
+}
+
