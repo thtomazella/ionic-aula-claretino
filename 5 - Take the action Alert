@@ -1,5 +1,7 @@
 <!-- homedir.page.ts -->
 
+// VALIDAR NO CONSOLE
+
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Alert } from 'selenium-webdriver';
