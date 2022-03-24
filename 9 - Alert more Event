@@ -1,0 +1,84 @@
+<!-- home.page.html -->
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <ion-button expand="block" (click)="showAlert()" >Show alerts</ion-button>
+    <ion-button expand="block" (click)="btnClicked()" >Information</ion-button>
+  </div>
+</ion-content>
+
+
+
+// homedir.page.ts
+
+import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { Alert } from 'selenium-webdriver';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+export class HomePage {
+
+  constructor(
+    // BUSCANDO O PACOTE DO IONIC
+    private alertCtrl: AlertController
+  ){}
+
+  btnClicked(){
+    console.log('teste');
+  }
+
+
+  async showAlert(){
+    //CHAMANDO O ALERTCONTROLER
+    //PASSAR ALGUMAS PROPRIEDADES
+    const myAlert = await this.alertCtrl.create({
+      header: 'HEADER',
+      subHeader: 'SUB HEADER',
+      message: 'MESSAGE',
+
+
+      //ADICIONANDO CAMPOS PARA DIGITAÇÃO
+      inputs:[{
+        name:'nome',
+        placeholder:'Seu nome'
+      },
+      {
+        name:'email',
+        placeholder:'Seu e-mail',
+        type:'email'
+      },
+      {
+        name:'key',
+        placeholder:'Informe a senha',
+        type:'password'
+      }
+    ],
+
+      // COLOCANDO INFORMAÇÕES PARA PEGAR AÇÕES DO BOTÃO
+
+      buttons: [
+        {
+        text: 'OK',
+        //PASSAR INFORMAÇÕES E EXIBIR
+        handler: (data) => {console.log(data);}
+      },
+      {
+        text: 'CANCELAR',
+        handler: () => {console.log('CLICOU EM CANCELAR');}
+      },
+    ]
+    });
+    myAlert.present();
+  }
+}
