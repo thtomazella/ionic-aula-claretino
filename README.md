@@ -8,3 +8,4 @@
 -- vai abrir a pagina
 
 - [ ] consultas  https://ionicframework.com/docs/api/title
+- [ ] consultas git https://github.com/ionic-team/ionic-docs/tree/main/docs
