@@ -1,0 +1,103 @@
+# No comando do DOS entre na pasta do projeto e adicione o registro do CHECKBOX
+
+ ionic g page checkbox
+ 
+ 
+ <!-- home.page.html  -->
+<ion-header translucent="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons  collapse="true" slot="end">
+      <ion-button>Sair</ion-button>
+    </ion-buttons>
+    <ion-title>Teste de abertura</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+
+<p>Default Checkbox</p>
+<ion-item>
+  <ion-label>CHECK 1</ion-label>
+  <ion-checkbox></ion-checkbox>
+  <ion-label>CHECK 2</ion-label>
+  <ion-checkbox></ion-checkbox>
+  <ion-label>CHECK 3</ion-label>
+  <ion-checkbox></ion-checkbox>
+</ion-item>
+
+<p>Disable Checkbox</p>
+<ion-checkbox disabled="true"></ion-checkbox>
+
+<p>Registro Enable com Variavel Checkbox</p>
+<ion-checkbox [(ngModel)]= "registroBoolean"></ion-checkbox>
+
+<p>Registro Enable com Variavel + EVENTO Checkbox</p>
+<ion-checkbox [(ngModel)]= "registroBoolean" (ionChange) = "habilitarCheckSobre()"></ion-checkbox>
+
+
+<p>Checked Checkbox</p>
+<ion-item>
+  <ion-checkbox checked="true"></ion-checkbox>
+  <ion-checkbox [(ngModel)]= "registroBoolean2"></ion-checkbox>
+</ion-item>
+
+<p>Checkbox Colors</p>
+<ion-checkbox checked="true" color="primary"></ion-checkbox>
+<ion-checkbox checked="true" color="secondary"></ion-checkbox>
+<ion-checkbox checked="true" color="danger"></ion-checkbox>
+<ion-checkbox checked="true" color="light"></ion-checkbox>
+<ion-checkbox checked="true" color="dark"></ion-checkbox>
+
+
+<p>Checkbox List</p>
+<ion-list>
+  <ion-item *ngFor= "let variavelHomePageHTML of lanctoHomePageTS">
+    <ion-label>{{variavelHomePageHTML.name}}</ion-label>
+    <ion-checkbox slot="end" [(ngModel)]= "variavelHomePageHTML.isChecked"></ion-checkbox>
+  </ion-item>
+</ion-list>
+
+</ion-content>
+
+   <ion-footer>
+    <ion-toolbar color="tertiary">
+      <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+
+// home.page.ts
+
+import { Component, OnInit } from '@angular/core';
+import { ActionSheetController } from '@ionic/angular';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+
+export class HomePage {
+  lanctoHomePageTS = [
+    {name: 'Teste List 1', isChecked: false},
+    {name: 'Teste List 2', isChecked: true},
+    {name: 'Teste List 3', isChecked: false},
+    {name: 'Teste List 4', isChecked: true},
+  ];
+
+  registroBoolean = true;
+  registroBoolean2 = true;
+
+  habilitarCheckSobre(){
+    console.log(this.registroBoolean);
+    if(this.registroBoolean ){
+      this.registroBoolean2 = false;
+    }else{
+      this.registroBoolean2 = true;
+    }
+  }
+
+
+}
+
