@@ -39,6 +39,9 @@ import { ActionSheetController } from '@ionic/angular';
 export class HomePage {
   _eventoClick(event: any){
     console.log(event);
+    // console.log(event.value);
   }
 }
+
+
 
