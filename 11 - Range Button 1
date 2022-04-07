@@ -1,0 +1,44 @@
+<!-- home.page.html  -->
+<ion-header translucent="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons  collapse="true" slot="end">
+      <ion-button>Sair</ion-button>
+    </ion-buttons>
+    <ion-title>Range Button</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-range color="danger" [pin]="true" (ionChange) = "_eventoClick($event)" ></ion-range>
+    </ion-item>
+
+  </ion-list>
+
+
+</ion-content>
+
+   <ion-footer>
+    <ion-toolbar color="tertiary">
+      <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+
+// home.page.ts
+import { Component, OnInit } from '@angular/core';
+import { ActionSheetController } from '@ionic/angular';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+
+export class HomePage {
+  _eventoClick(event: any){
+    console.log(event);
+  }
+}
+
