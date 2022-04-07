@@ -1,0 +1,71 @@
+<!-- home.page.html  -->
+<ion-header translucent="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons  collapse="true" slot="end">
+      <ion-button>Sair</ion-button>
+    </ion-buttons>
+    <ion-title>Range Button</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-range color="danger" [pin]="true" (ionChange) = "_eventoClick($event)" ></ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-range min="-200" max="200" color="secondary">
+        <ion-label slot="start">-200</ion-label>
+        <ion-label slot="end">200</ion-label>
+      </ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-range min="20" max="80" step="2">
+        <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+        <ion-icon slot="end" name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-range min="1000" max="2000" step="100" snaps="true" color="secondary"></ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-range min="1000" max="2000" step="100" snaps="true" ticks="false" color="secondary"></ion-range>
+    </ion-item>
+
+    <ion-item>
+      <ion-range dualKnobs="true" min="21" max="72" step="3" snaps="true"></ion-range>
+    </ion-item>
+
+    <ion-icon slot="end" name="thermometer" aria-label="thermometer" role="img"
+   ></ion-icon>
+
+    <ion-item>
+      <ion-range min="-50" max="60" step="2">
+        <ion-label slot="start">-60</ion-label>
+
+        <ion-icon slot="start"  color="primary"  name="thermometer"  class="hydrated">-60</ion-icon>
+        <ion-icon slot="end"    color="danger"   name="thermometer"  class="hydrated">+60</ion-icon>
+        <ion-label slot="end">+60</ion-label>
+      </ion-range>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-range min="0" max="100" ></ion-range>
+    </ion-item>
+
+  </ion-list>
+
+
+</ion-content>
+
+   <ion-footer>
+    <ion-toolbar color="tertiary">
+      <ion-title>Footer</ion-title>
+    </ion-toolbar>
+  </ion-footer>
