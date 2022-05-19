@@ -1,0 +1,42 @@
+CREATE TABLE `pedido` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_cliente` varchar(50) NOT NULL,
+  `qtdeItens` double(10,2) DEFAULT '0.00',
+  `total` double(10,2) DEFAULT '0.00',
+  `criadoem` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `pedidocomp` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_pedido` varchar(50) NOT NULL,
+  `id_produto` varchar(50) NOT NULL,
+  `qtde` double(10,2) DEFAULT '0.00',
+  `unit` double(10,2) DEFAULT '0.00',
+  `total` double(10,2) DEFAULT '0.00',
+  `criadoem` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `produto` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL,
+  `criadoem` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `teste`.`pedido` (`id`, `id_cliente`) VALUES ('1', '1');
+INSERT INTO `teste`.`pedido` (`id`, `id_cliente`) VALUES ('2', '1');
+INSERT INTO `teste`.`pedido` (`id`, `id_cliente`) VALUES ('3', '1');
+
+INSERT INTO `teste`.`pedidocomp` (`id`, `id_pedido`, `id_produto`, `qtde`, `unit`) VALUES ('1', '1', '1', '1', '0.5');
+INSERT INTO `teste`.`pedidocomp` (`id`, `id_pedido`, `id_produto`, `qtde`, `unit`) VALUES ('2', '1', '2', '3', '1');
+INSERT INTO `teste`.`pedidocomp` (`id`, `id_pedido`, `id_produto`, `qtde`, `unit`) VALUES ('3', '1', '3', '2', '5');
+INSERT INTO `teste`.`pedidocomp` (`id`, `id_pedido`, `id_produto`, `qtde`, `unit`) VALUES ('4', '2', '2', '2', '1');
+INSERT INTO `teste`.`pedidocomp` (`id`, `id_pedido`, `id_produto`, `qtde`, `unit`) VALUES ('5', '2', '3', '1', '0.5');
+INSERT INTO `teste`.`pedidocomp` (`id`, `id_pedido`, `id_produto`, `qtde`, `unit`) VALUES ('6', '3', '1', '1', '0.8');
+
+INSERT INTO `teste`.`produto` (`nome`) VALUES ('PROD1 ');
+INSERT INTO `teste`.`produto` (`nome`) VALUES ('PROD 2');
+INSERT INTO `teste`.`produto` (`nome`) VALUES ('PROD 3');
+INSERT INTO `teste`.`produto` (`nome`) VALUES ('PROD 4');
