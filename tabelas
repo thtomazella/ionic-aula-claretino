@@ -1,3 +1,42 @@
+DROP DATABASE IF exists teste;
+create database teste;
+
+CREATE TABLE teste.cliente(
+    id        INT         auto_increment primary key,
+    nome      VARCHAR(50) NOT NULL, 
+    cidade_id VARCHAR(50) NOT NULL, 
+    criadoem  TIMESTAMP   DEFAULT current_timestamp()
+ )ENGINE=INNODB;
+ 
+ CREATE TABLE teste.fornecedor(
+    id        INT         auto_increment primary key,
+    nome      VARCHAR(50) NOT NULL, 
+    cidade_id VARCHAR(50) NOT NULL, 
+    criadoem  TIMESTAMP   DEFAULT current_timestamp()
+ )ENGINE=INNODB;
+ 
+ CREATE TABLE teste.cidade(
+    id        INT         auto_increment primary key,
+    nome      VARCHAR(50) NOT NULL, 
+    criadoem  TIMESTAMP   DEFAULT current_timestamp()
+ )ENGINE=INNODB;
+ 
+insert into teste.cliente(nome, cidade_id) values('THIAGO', '1');
+insert into teste.cliente(nome, cidade_id) values('JOAO', '2');
+insert into teste.cliente(nome, cidade_id) values('JOANA', '2');
+insert into teste.cliente(nome, cidade_id) values('MARIA', '2');
+insert into teste.cliente(nome, cidade_id) values('CLAUDIA', '3');
+insert into teste.cliente(nome, cidade_id) values('ANTONIO', '3');
+
+insert into teste.fornecedor(nome, cidade_id) values('FORN 1', '1');
+insert into teste.fornecedor(nome, cidade_id) values('FORN 2', '2');
+insert into teste.fornecedor(nome, cidade_id) values('FORN 3', '2');
+
+
+insert into teste.cidade(nome) values('RIO CLARO');
+insert into teste.cidade(nome) values('PIRACICABA');
+
+
 CREATE TABLE `pedido` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_cliente` varchar(50) NOT NULL,
